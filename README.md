@@ -1,51 +1,142 @@
-# 📊 Quantitative Risk Management System
+# Quantitative Risk Management System
+Advanced Portfolio Risk Engine using GARCH, EVT, Copula & Factor Models
 
-## Overview
-This project is a full quantitative finance risk engine for portfolio analysis, combining statistical modeling, risk measurement, and portfolio optimization.
+---
 
-It includes:
-- Volatility modeling (GARCH)
-- Risk estimation (VaR / CVaR)
-- Extreme Value Theory (EVT)
+## 📌 Project Objective
+
+This project implements a full-scale quantitative risk management pipeline including:
+
+- Portfolio performance analysis
+- Volatility modeling (GARCH(1,1))
+- Tail risk estimation (EVT - Generalized Pareto)
+- Monte Carlo VaR (Normal & Student-t)
+- Copula-based dependency modeling
+- Markowitz & Black-Litterman optimization
+- Fama-French factor regression
+- VaR backtesting (Kupiec test)
+
+---
+
+## 🏗 System Architecture
+
+Data (SQLite)
+   ↓
+Return Engine
+   ↓
+Risk Models:
+   - GARCH
+   - EVT
+   - Monte Carlo
+   - Copula
+   ↓
+Portfolio Construction:
+   - Markowitz Optimization
+   - Black-Litterman Model
+   ↓
+Validation Layer:
+   - VaR Backtesting (Kupiec Test)
+   ↓
+Outputs:
+   - 10 Visualization Plots
+   - Excel Risk Report
+
+---
+
+## ⚙ Features
+
+- Volatility modeling using GARCH(1,1)
+- Tail risk estimation using Extreme Value Theory (EVT)
+- Monte Carlo VaR simulation (Normal & Student-t)
+- Copula-based tail dependence analysis
+- Mean-Variance Optimization (Markowitz)
+- Black-Litterman portfolio optimization
+- Fama-French 3-factor regression model
+- Kupiec VaR backtesting framework
+- Rolling risk analysis and dynamic correlation
+- Automated Excel reporting system
+- 10 high-quality visualization plots
+
+---
+
+## 🧠 Why This Project Matters
+
+This system is designed to replicate institutional-grade risk frameworks used in hedge funds and asset management firms for:
+
+- Tail risk estimation beyond normal distribution assumptions
+- Volatility clustering modeling via GARCH
+- Dependency modeling via Copulas
+- Stress testing portfolios under extreme market conditions
+- Robust portfolio optimization under uncertainty
+
+---
+
+## 🔑 Key Insight
+
+Traditional VaR models often underestimate tail risk due to normality assumptions.  
+This system combines:
+
+- EVT (Extreme Value Theory)
+- GARCH volatility clustering
 - Monte Carlo simulation
-- Portfolio optimization (Markowitz & Black-Litterman)
-- Factor modeling (Fama-French)
-- Dependency modeling (Correlation & Copula)
-- Risk backtesting
+
+to better capture fat-tail behavior in financial returns.
 
 ---
 
-## ⚙️ Features
+## 📦 Installation
 
-### 📉 Risk Models
-- Historical VaR & CVaR
-- Monte Carlo VaR (Normal distribution)
-- GARCH(1,1) volatility model
-- GARCH Monte Carlo (Student-t distribution)
-- Extreme Value Theory (GPD tail risk)
-
-### 📊 Portfolio Optimization
-- Markowitz Mean-Variance Optimization
-- Black-Litterman model with investor views
-
-### 📈 Performance Metrics
-- Sharpe Ratio
-- Sortino Ratio
-- Treynor Ratio
-- Information Ratio
-- Beta / Alpha
-
-### 🔗 Dependency Analysis
-- Correlation matrix
-- Rolling correlation
-- Copula tail dependence
-
-### 🧪 Validation
-- Kupiec VaR backtesting
+pip install numpy pandas matplotlib seaborn scipy scikit-learn arch openpyxl
 
 ---
 
-## 📁 Data Source
+## 🚀 Run Project
 
-Data is loaded from a local SQLite database.
+python main.py
 
+---
+
+## 📁 Project Structure
+
+Quant-Risk-System/
+│
+├── main.py
+├── README.md
+├── requirements.txt
+├── Plots/
+│   ├── 1_var_comparison.png
+│   ├── 2_risk_return_profile.png
+│   ├── ...
+│   └── 10_copula_tail_dependence.png
+│
+└── portfolio.db
+
+---
+
+## 📊 Outputs
+
+- 10 risk visualization plots
+- Excel report with:
+  - Basic metrics
+  - GARCH estimates
+  - Monte Carlo VaR
+  - EVT analysis
+  - Portfolio optimization
+  - Copula dependency structure
+
+---
+
+## 📈 Visualization Summary
+
+All plots are saved automatically in `/Plots/`:
+
+1. VaR Comparison (Historical vs MC vs GARCH-MC)
+2. Risk-Return Profile
+3. Correlation Heatmap
+4. Fama-French Factor Exposure
+5. Portfolio Weights
+6. VaR Backtesting
+7. Dynamic Correlation
+8. EVT Tail Risk
+9. GARCH Persistence
+10. Copula Tail Dependence
